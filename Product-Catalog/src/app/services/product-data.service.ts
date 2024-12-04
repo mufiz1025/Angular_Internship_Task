@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../model/product-entity';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -40,8 +41,9 @@ export class ProductDataService {
    }
   ]
   getData() : Product[]{
-    return this.Product_Details ;
+   return this.Product_Details;
   }
+ 
   setData(productValues : Product) {
     this.Product_Details.push(productValues);
   }
@@ -50,8 +52,8 @@ export class ProductDataService {
   }
   
 
-  constructor() {
+  constructor() {}
    
-   }
+   
 
 }
