@@ -1,0 +1,24 @@
+
+<div class="text-style" >
+
+    <h2>Product Detials </h2>
+    <div *ngFor="let item of serverData">
+    <div *ngIf="productid ==item.productId">
+        <div> Product Name : {{item.productName}} </div>
+
+        <div> Price : $ {{item.productPrice}}</div> 
+        
+        <div> Description : {{ item.productDescription}} </div>
+        <div *ngIf="item.productStatus">  Product Status: In stock </div> 
+        <div *ngIf="!item.productStatus"> Product Status :  out of stock </div>  
+    </div>
+    
+
+</div>
+<div>
+    <button type="submit" class="btn btn-secondary" [routerLink]="['/home']" routerLinkActive="active">
+        Back
+      </button>
+</div>
+
+<router-outlet></router-outlet>
