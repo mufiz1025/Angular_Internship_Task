@@ -1,24 +1,22 @@
 
-<div class="text-style" >
+<div style="text-align: center;" class="product-detail" >
 
-    <h2>Product Detials </h2>
-    <div *ngFor="let item of serverData">
-    <div *ngIf="productid ==item.productId">
-        <div> Product Name : {{item.productName}} </div>
+    <h3>Product Detials </h3>
 
-        <div> Price : $ {{item.productPrice}}</div> 
+        <p > Product Name : {{product?.productName}} </p>
+
+        <p> Price : $ {{product?.productPrice}}</p> 
         
-        <div> Description : {{ item.productDescription}} </div>
-        <div *ngIf="item.productStatus">  Product Status: In stock </div> 
-        <div *ngIf="!item.productStatus"> Product Status :  out of stock </div>  
+        <p> Description : {{ product?.productDescription}} </p>
+        
+        <p>
+            Product Status: {{ (product?.productStatus == instock) ? 'in Stock': 'Out Of Stock'}}
+          </p>
+            
+        
+        <button class="back-button" type="submit" class="btn btn-secondary" [routerLink]="['/home']" routerLinkActive="active">
+             Back
+        </button>           
     </div>
-    
 
-</div>
-<div>
-    <button type="submit" class="btn btn-secondary" [routerLink]="['/home']" routerLinkActive="active">
-        Back
-      </button>
-</div>
-
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> 

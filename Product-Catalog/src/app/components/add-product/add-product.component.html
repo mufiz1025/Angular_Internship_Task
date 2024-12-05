@@ -3,8 +3,8 @@
         <h3 >
             Add a Product 
         </h3>
-  <hr>
-   <form [formGroup]="ProductForm" (ngSubmit)="onSubmit()">
+  <hr> 
+   <form [formGroup]="ProductForm" (ngSubmit)="onSubmit()" >
     <div class="form-group">
         <input [class.is-invalid]="productName?.invalid && productName?.touched" 
          type="text" placeholder="Product Name" class="form-control" formControlName="productName">
@@ -13,8 +13,6 @@
            <small *ngIf="productName?.errors?.['minlength']" class="text-danger"> Product Name must be atleast 3 Characters.</small>
           </div>
     </div> 
-    
-           
     <div class="form-group">
             <input [class.is-invalid]="productPrice?.invalid && productPrice?.touched" 
             type="text" placeholder="Product Price" class="form-control" formControlName="productPrice">
@@ -33,8 +31,8 @@
         </select>
        </div>
        <div class="form-group" style="text-align: center;">
-        <div >
-            <button [disabled]="!ProductForm.valid" type="submit" formControlName="productId"  (click)="onSubmit()"   class="btn btn-secondary" [routerLink]="['/home']" routerLinkActive="active">
+        <div>
+            <button [disabled]="!ProductForm.valid" type="submit"  (click)="onSubmit()" [routerLink]="['/home']"  class="btn btn-secondary"  routerLinkActive="active">
                 Add
             </button>
         </div>

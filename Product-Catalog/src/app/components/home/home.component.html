@@ -2,7 +2,8 @@
 <h2 style="text-align: center;"> Home </h2>
 
 
-<div *ngIf="serverData" class="row">
+
+<div *ngIf="serverData" class="row"  >
     <div class="col-12">
         <table class="table  table-striped table-bordered table-hover">
             <thead>
@@ -15,16 +16,16 @@
             </thead>
             <tbody>
                
-                <tr  *ngFor="let data of serverData;let i= index" appHighlightProduct >
-                    <td>{{i+1}}</td>
-                    <td>
+                <tr  *ngFor="let data of serverData;let i= index" >
+                    <td>{{data.productId}}</td>
+                    <td  appHighlight [productStatus]="!data.productStatus">
                         {{data.productName}}
                     </td>
                     <td>
                         {{data.productPrice}}
                     </td>
                     <td>
-                        <button [routerLink]="['/details']" (click)="onClick(data)" routerLinkActive="active" class="btn btn-secondary">
+                        <button  (click)="onClick(data)" routerLinkActive="active" class="btn btn-secondary">
                             View Details
                         </button>
                     </td>
