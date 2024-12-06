@@ -4,7 +4,7 @@ import { Product } from '../../model/product-entity';
 import { ProductDataService } from '../../services/product-data.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HighlightDirective } from '../../directives/highlight.directive';
+
 
 @Component({
   selector: 'app-product-detials',
@@ -26,8 +26,11 @@ export class ProductDetialsComponent implements OnInit {
  
  ngOnInit(): void {
     this.serverData = this._dataservice.getData();
+    
     let id = parseInt(this.route.snapshot.paramMap.get('productId')!);
     this.product = this._dataservice.getDatabyId(id);
     this.productid = id ;
  }
+
+ 
 }

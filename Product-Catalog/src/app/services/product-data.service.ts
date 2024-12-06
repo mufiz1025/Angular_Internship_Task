@@ -16,28 +16,28 @@ export class ProductDataService {
        productName: 'mobile phone',
        productPrice : 23000,
        productDescription: 'best ever cell phone in the market',
-       productStatus : true,
+       productStatus : 'In Stock',
        productId :1
     },
     {
       productName: 'groceries',
       productPrice : 230,
       productDescription: 'you get all the fresh groceries',
-      productStatus : false ,
+      productStatus : 'Out Of Stock' ,
       productId : 2
    },
    {
     productName: 'outfit store',
     productPrice : 1499,
     productDescription: 'you get all the fashion products over here.',
-    productStatus : true ,
+    productStatus : 'In Stock' ,
     productId : 3
    },
    {
     productName: 'home store',
     productPrice : 4999,
     productDescription: 'You get all the home Products here.',
-    productStatus : false ,
+    productStatus : 'Out Of Stock' ,
     productId : 4
    }
   ]

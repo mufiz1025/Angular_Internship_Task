@@ -3,6 +3,6 @@ export class Product  {
     productName? : string ;
     productPrice? : number ; 
     productDescription? : string ;
-    productStatus? : Boolean ;
+    productStatus? : string ;
     productId? : number ;
 }

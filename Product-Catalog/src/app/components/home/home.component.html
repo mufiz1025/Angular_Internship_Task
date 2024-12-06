@@ -4,6 +4,7 @@
 
 
 <div *ngIf="serverData" class="row"  >
+    <small class="text-success" > The products which are highligted are currently out of stocks.</small>
     <div class="col-12">
         <table class="table  table-striped table-bordered table-hover">
             <thead>
@@ -18,10 +19,10 @@
                
                 <tr  *ngFor="let data of serverData;let i= index" >
                     <td>{{data.productId}}</td>
-                    <td  appHighlight [productStatus]="!data.productStatus">
+                    <td   [ngClass]="{ 'out-of-stock' : data.productStatus === 'Out Of Stock' }  ">                                                     
                         {{data.productName}}
                     </td>
-                    <td>
+                    <td >
                         {{data.productPrice}}
                     </td>
                     <td>

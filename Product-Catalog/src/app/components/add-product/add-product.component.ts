@@ -21,7 +21,7 @@ export class AddProductComponent implements OnInit {
    
     productcount : number = 0 ;
    
-   public InventoryStatus = ['In Stock' , 'Out of Stock'];
+   public InventoryStatus = ['In Stock' , 'Out Of Stock'];
    
    
    constructor( private fbuilder : FormBuilder , private _dataService : ProductDataService){
@@ -46,12 +46,12 @@ export class AddProductComponent implements OnInit {
    
   
   onSubmit(){
-    console.log( 'form submitted!',this.ProductForm.value);
+   
     this.value = (this._dataService.productCount) + 1;
     this.ProductForm.get('productId')?.setValue(this.value);
-    console.log(this.value);
+   
     this._dataService.setData(this.ProductForm.value);
-    console.log(this.ProductForm.value);
+    console.log('form submitted!',this.ProductForm.value);
   }
 }
 
