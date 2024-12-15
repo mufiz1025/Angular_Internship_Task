@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {  Router, RouterLink, RouterOutlet } from '@angular/router';
 import { ProductDataService } from '../../services/product-data.service';
+import { EditProductComponent } from "../edit-product/edit-product.component";
 
 
 
@@ -25,7 +26,10 @@ export class HomeComponent implements OnInit {
     
   }
   
-  onClick(data:Product){
+  onDetails(data:Product){
     this.router.navigate(['/details' , data.productId])
+  }
+  onEdit(data:Product){
+    this.router.navigate(['/edit' , data.productId])
   }
 }

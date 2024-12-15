@@ -53,6 +53,14 @@ export class ProductDataService {
       }
        return new Product();
    }
+   updateProduct(id: number, product: any): Observable<any> {
+     product = this.Product_Details.find(x => x.productId === id);
+     if(product)
+     {
+      return product;
+     }
+     return new Observable();
+  }
 
   setData(productValues : Product) {
     

@@ -1,6 +1,14 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+
+    
+    {   path :'' ,
+        pathMatch: 'full',
+        loadComponent :() => {
+            return import('./components/home/home.component').then((m) => m.HomeComponent)
+         }
+    },
     
     {   path :'home' ,
         pathMatch: 'full',
@@ -12,6 +20,12 @@ export const routes: Routes = [
         pathMatch: 'full',
         loadComponent :() => {
             return import('./components/product-detials/product-detials.component').then((m) => m.ProductDetialsComponent)
+         }
+    },
+    {   path :'edit/:productId' ,
+        pathMatch: 'full',
+        loadComponent :() => {
+            return import('./components/edit-product/edit-product.component').then((m) => m.EditProductComponent)
          }
     },
      

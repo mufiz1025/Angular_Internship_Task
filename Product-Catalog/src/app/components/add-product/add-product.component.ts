@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule,  Validators } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { ProductDataService } from '../../services/product-data.service';
+import { EditProductComponent } from '../edit-product/edit-product.component';
 
 
 
 
 @Component({
   selector: 'app-add-product',
-  imports: [RouterOutlet , RouterLink ,ReactiveFormsModule , FormsModule, CommonModule ],
+  imports: [RouterOutlet, RouterLink, ReactiveFormsModule, FormsModule, CommonModule, EditProductComponent],
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.scss'
 })

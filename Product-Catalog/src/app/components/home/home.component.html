@@ -26,8 +26,11 @@
                         {{data.productPrice}}
                     </td>
                     <td>
-                        <button  (click)="onClick(data)" routerLinkActive="active" class="btn btn-secondary">
+                        <button  (click)="onDetails(data)" routerLinkActive="active" class="btn btn-secondary">
                             View Details
+                        </button>
+                        <button  (click)="onEdit(data)" routerLinkActive="active" class="btn btn-secondary">
+                            Edit Details
                         </button>
                     </td>
                 </tr>
